@@ -1,0 +1,77 @@
+[
+  {
+    "id": "PR-260903-01",
+    "title": "지역상생 의료봉사 보도자료",
+    "type": "보도자료",
+    "status": "검토",
+    "priority": "높음",
+    "owner": "조진우",
+    "due_date": "2026-09-04",
+    "channel": "언론·홈페이지",
+    "requester": "사회공헌팀",
+    "objective": "지역상생 활동의 신뢰도 제고",
+    "audience": "지역 언론·시민",
+    "key_message": "의료 접근성이 낮은 지역에 지속 가능한 진료 지원",
+    "risk": "수혜자 개인정보 및 사진 동의",
+    "memo": "진료 인원 수치 재확인 필요",
+    "progress": 67,
+    "checklist": [
+      {"label": "사실·수치 원출처 확인", "done": true},
+      {"label": "제목에 핵심 뉴스 반영", "done": true},
+      {"label": "관계부서 팩트체크", "done": true},
+      {"label": "초상권·개인정보 확인", "done": false},
+      {"label": "배포처·기자 리스트 확정", "done": false},
+      {"label": "최종 승인본 잠금", "done": false}
+    ]
+  },
+  {
+    "id": "PR-260903-02",
+    "title": "건강정보 숏폼: 거품뇨 편",
+    "type": "영상",
+    "status": "제작",
+    "priority": "보통",
+    "owner": "김민지",
+    "due_date": "2026-09-06",
+    "channel": "유튜브·인스타그램",
+    "requester": "신장내과",
+    "objective": "정확한 건강정보 확산",
+    "audience": "30~50대 일반인",
+    "key_message": "거품뇨가 반복되면 단백뇨 검사가 필요할 수 있다",
+    "risk": "의학적 단정 표현 금지",
+    "memo": "의료진 감수 후 자막 확정",
+    "progress": 48,
+    "checklist": [
+      {"label": "기획의도·한 문장 메시지", "done": true},
+      {"label": "콘티·대본 승인", "done": true},
+      {"label": "출연·촬영 동의", "done": false},
+      {"label": "안전·브랜드 가이드 확인", "done": false},
+      {"label": "자막·음원 저작권 확인", "done": false},
+      {"label": "썸네일·배포 채널 확정", "done": false}
+    ]
+  },
+  {
+    "id": "PR-260903-03",
+    "title": "온라인 커뮤니티 오정보 대응",
+    "type": "위기이슈",
+    "status": "승인",
+    "priority": "긴급",
+    "owner": "조진우",
+    "due_date": "2026-09-03",
+    "channel": "온라인·언론",
+    "requester": "홍보실",
+    "objective": "확산 차단 및 사실관계 정정",
+    "audience": "환자·보호자·언론",
+    "key_message": "확인된 사실과 공식 조치 중심으로 안내",
+    "risk": "개별 환자정보 노출·감정적 대응",
+    "memo": "법무 검토 완료, 원장 승인 대기",
+    "progress": 84,
+    "checklist": [
+      {"label": "확인된 사실/추정 분리", "done": true},
+      {"label": "1차 보고 완료", "done": true},
+      {"label": "대응 책임자 지정", "done": true},
+      {"label": "홀딩 스테이트먼트 작성", "done": true},
+      {"label": "대외 창구 일원화", "done": false},
+      {"label": "종결 후 재발방지 기록", "done": false}
+    ]
+  }
+]
