@@ -11,6 +11,7 @@ PR-Flow-Streamlit/
 ├── streamlit_app.py
 ├── app_data.py
 ├── app_styles.py
+├── embedded_assets.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
@@ -36,6 +37,9 @@ PR-Flow-Streamlit/
 
 GitHub의 `main` 브랜치 코드를 수정하면 Streamlit 앱에도 자동 반영됩니다.
 또한 GitHub Actions가 모든 화면의 기동 여부를 자동 검사합니다.
+
+`assets` 폴더의 원본 사진을 우선 사용하며, 사진 파일이 GitHub 업로드에서
+누락되어도 `embedded_assets.py`의 축소 내장 이미지로 자동 대체해 앱이 정상 실행됩니다.
 
 ## 내 컴퓨터에서 실행
 

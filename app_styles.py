@@ -2,22 +2,38 @@ from __future__ import annotations
 
 import base64
 from html import escape
+from io import BytesIO
 from pathlib import Path
 
 import streamlit as st
 
+from embedded_assets import LITTLE_SISTER_B64, SEA_POEM_B64
+
 BASE_DIR = Path(__file__).parent
 
 
-def _data_uri(path: Path) -> str:
-    mime = "image/jpeg"
-    encoded = base64.b64encode(path.read_bytes()).decode("ascii")
-    return f"data:{mime};base64,{encoded}"
+def _asset_b64(path: Path, fallback_b64: str) -> str:
+    """Return the original asset when available, otherwise its built-in copy."""
+    try:
+        return base64.b64encode(path.read_bytes()).decode("ascii")
+    except (FileNotFoundError, OSError):
+        return fallback_b64
+
+
+def _data_uri(path: Path, fallback_b64: str) -> str:
+    return f"data:image/jpeg;base64,{_asset_b64(path, fallback_b64)}"
+
+
+def _image_source(path: Path, fallback_b64: str) -> Path | BytesIO:
+    """Build a Streamlit image source that is safe on GitHub deployments."""
+    if path.is_file():
+        return path
+    return BytesIO(base64.b64decode(fallback_b64))
 
 
 def inject_css() -> None:
-    sea = _data_uri(BASE_DIR / "assets" / "sea_poem.jpeg")
-    sister = _data_uri(BASE_DIR / "assets" / "little_sister.jpeg")
+    sea = _data_uri(BASE_DIR / "assets" / "sea_poem.jpeg", SEA_POEM_B64)
+    sister = _data_uri(BASE_DIR / "assets" / "little_sister.jpeg", LITTLE_SISTER_B64)
     st.markdown(
         f"""
         <style>
@@ -114,7 +130,10 @@ def inject_css() -> None:
 def render_sidebar_brand() -> None:
     st.markdown('<div class="cute-title">🌊 홍보 바다</div>', unsafe_allow_html=True)
     st.markdown('<div class="cute-sub">업무가 파도처럼 밀려와도<br>하나씩 예쁘게 정리해요.</div>', unsafe_allow_html=True)
-    st.image(BASE_DIR / "assets" / "little_sister.jpeg", width="stretch")
+    st.image(
+        _image_source(BASE_DIR / "assets" / "little_sister.jpeg", LITTLE_SISTER_B64),
+        width="stretch",
+    )
 
 
 def render_hero() -> None:
